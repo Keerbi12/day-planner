@@ -73,5 +73,24 @@ textarea {
 /* Table CSS */
 
 .table {
-  border: 2px solid black;
+  overflow: hidden;
+}
+
+.table, tr {
+  border: 3px solid white;
+}
+
+.tDate {
+  background-color: none;
+  width: 10%;
+}
+
+.tInput {
+  background-color: lightgrey;
+}
+
+.tSave {
+  border-radius: 0 2rem 2rem 0;
+  background-color: turquoise;
+  width: 10%;
 }
