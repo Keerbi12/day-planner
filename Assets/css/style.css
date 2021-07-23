@@ -73,11 +73,12 @@ textarea {
 /* Table CSS */
 
 .table {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .table, tr {
-  border: 3px solid white;
+  /* border: 3px solid white; */
+  border-top: 2px solid black;
 }
 
 .tDate {

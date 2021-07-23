@@ -12,21 +12,24 @@ const times = [
     '5PM'
 ]
 
-console.log(m.format('MMMM Do YYYY, h:mm:ss a'));
-
-// jQuery of var currentDay = getElementById('#currentDay'), 
+// jQuery of var currentDay = querySelectorAll('#currentDay'), 
 var currentDay = $('#currentDay');
 // Set the text to current date via moment.js
 currentDay.text(m.format('MMMM Do YYYY'));
 
-
-
-// Variable that represents empty table
+// var tableHere = querySelectorAll("#tableHere");
 var tableHere = $('#tableHere');
-// Creating a row, with three columns, Date, Input and Save
-var row = $('<tr><td class=tDate>' + 'Date' + '</td><td class=tInput>' + 'Input' + '</td><td class=tSave>' + 'Save' + '</td></tr>');
-// Adding the row to the empty table
-tableHere.append(row);
+
+var createTable = function() {
+    for (let i = 0; i < times.length; i++) {
+        // Creating a row, with three columns, Date, Input and Save
+var row = $('<tr><td class=tDate>' + times[i] + '</td><td class=tInput>' + 'Input' + '</td><td class=tSave>' + 'Save' + '</td></tr>');
+
+        tableHere.append(row);
+    }
+};
+
+createTable();
 
 
 
