@@ -1,5 +1,5 @@
 const m = moment();
-
+// An array of times
 const times = [
     '9AM',
     '10AM',
@@ -21,14 +21,13 @@ currentDay.text(m.format('MMMM Do YYYY'));
 
 
 
-// Table
-var tableHere = $('.tableHere');
+// Variable that represents empty table
+var tableHere = $('#tableHere');
+// Creating a row, with three columns, Date, Input and Save
+var row = $('<tr><td class=tDate>' + 'Date' + '</td><td class=tInput>' + 'Input' + '</td><td class=tSave>' + 'Save' + '</td></tr>');
+// Adding the row to the empty table
+tableHere.append(row);
 
-
-var tableEl = $('<tr>');
-tableEl.text('Hello');
-
-tableHere.append(tableEl);
 
 
 
