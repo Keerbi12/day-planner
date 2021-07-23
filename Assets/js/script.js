@@ -12,33 +12,50 @@ const times = [
     '5 PM'
 ]
 
-// jQuery of var currentDay = querySelectorAll('#currentDay'), 
-var currentDay = $('#currentDay');
 // Set the text to current date via moment.js
-currentDay.text(m.format('MMMM Do YYYY'));
+$('#currentDay').text(m.format('MMMM Do YYYY, LTS'));
+
+
 
 // var tableHere = querySelectorAll("#tableHere");
-var tableHere = $('#tableHere');
+const tableHere = $('#tableHere');
+
+// Create button function
+const addBtn = function() {
+    $('.btnContainer').append($('<button class=saveBtn>save</button>'))
+    $('.inputContainer').append($('<input type=text></input>'))
+};
 
 // for loop which creates rows equal to the array size of times
 for (let i = 0; i < times.length; i++) {
 // Creating a row, with three columns, Date, Input and Save
-var row = $(
+const rowEl = $(
     `<tr>
         <td class=tDate> 
             ${times[i]} 
         </td>
         <td class=tInput> 
-            Input 
+            <div class=inputContainer>
+            </div>
         </td>
-        <td class=tSave> 
-            Save 
+        <td class=tSave>
+            <div class=btnContainer> 
+            </div>
         </td>
     </tr>`
 );
 // Appends the row to the table
-tableHere.append(row);
-}
+tableHere.append(rowEl);
+// Adds paceholder text into input column
+$('.tInput').text(`Enter`);
+// Calls create button function
+};
+
+addBtn();
+
+
+
+
 
 
 
