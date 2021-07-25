@@ -65,12 +65,60 @@ const rowEl = $(
 tableHere.append(rowEl);
 };
 
-// Saves to local storage upon click
+// An alert that tells you the text has been saved
+$('.saveBtn').click(function() {
+    console.log(this.id)
+    alert(`Text saved on ${this.id}`)
+}) 
+
+
+// Saves to local storage upon click for btnOne etc.
 $('#btnOne').click(function() {
-    const textInputOne = $('#inputOne').val();
-    localStorage.setItem('textValueOne', textInputOne);
+    localStorage.setItem('textValueOne', $('#inputOne').val());
 })
 $('#inputOne').val(localStorage.getItem('textValueOne'));
+// btnTwo
+$('#btnTwo').click(function() {
+    localStorage.setItem('textValueTwo', $('#inputTwo').val());
+})
+$('#inputTwo').val(localStorage.getItem('textValueTwo'));
+// btnThree
+$('#btnThree').click(function() {
+    localStorage.setItem('textValueThree', $('#inputThree').val());
+})
+$('#inputThree').val(localStorage.getItem('textValueThree'));
+// btnFour
+$('#btnFour').click(function() {
+    localStorage.setItem('textValueFour', $('#inputFour').val());
+})
+$('#inputFour').val(localStorage.getItem('textValueFour'));
+// btnFive
+$('#btnFive').click(function() {
+    localStorage.setItem('textValueFive', $('#inputFive').val());
+})
+$('#inputFive').val(localStorage.getItem('textValueFive'));
+// btnSix
+$('#btnFive').click(function() {
+    localStorage.setItem('textValueSix', $('#inputSix').val());
+})
+$('#inputSix').val(localStorage.getItem('textValueSix'));
+// btnSeven
+$('#btnSeven').click(function() {
+    localStorage.setItem('textValueSeven', $('#inputSeven').val());
+})
+$('#inputSeven').val(localStorage.getItem('textValueSeven'));
+// btnEight
+$('#btnEight').click(function() {
+    localStorage.setItem('textValueEight', $('#inputEight').val());
+})
+$('#inputEight').val(localStorage.getItem('textValueEight'));
+// btnNine
+$('#btnNine').click(function() {
+    localStorage.setItem('textValueNine', $('#inputNine').val());
+})
+$('#inputNine').val(localStorage.getItem('textValueNine'));
+
+
 
 // // click to submit form
 // $('.saveBtn').click(function() {
