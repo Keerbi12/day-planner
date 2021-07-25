@@ -25,16 +25,21 @@ const inputId = [
     'inputEight',
     'inputNine',
 ];
+// An array of Id's for buttons
+const btnId = [
+    'btnOne',
+    'btnTwo',
+    'btnThree',
+    'btnFour',
+    'btnFive',
+    'btnSix',
+    'btnSeven',
+    'btnEight',
+    'btnNine',
+];
 
 // Set the text to current date via moment.js
 $('#currentDay').text(m.format('MMMM Do YYYY, LTS'));
-
-// Create button function
-const addBtn = function() {
-    $('.btnContainer').append($('<button class=saveBtn>save</button>'))
-    // Adds paceholder text into input column
-    $('.formInput').append($('<input class="inputBox" type="text" placeholder="Enter"></input>'))
-};
 
 // for loop which creates rows equal to the array size of times
 for (let i = 0; i < times.length; i++) {
@@ -46,10 +51,12 @@ const rowEl = $(
         </td>
         <td class=tInput> 
             <form class=formInput id=${inputId[i]}>
+                <input class="inputBox" type="text" placeholder="Enter"></input>
             </form>
         </td>
         <td class=tSave>
             <div class=btnContainer> 
+                <button id=${btnId[i]} class=saveBtn>save</button>
             </div>
         </td>
     </tr>`
@@ -57,21 +64,27 @@ const rowEl = $(
 // Appends the row to the table
 tableHere.append(rowEl);
 };
-// Calls create button function
-addBtn();
 
-// Prevents default refresh on form submit
-$('.formInput').submit(function(event) {
-    alert("hi");
-    event.preventDefault();
+$('#btnOne').click(function() {
+    console.log("btnOne")
 })
 
 
+// // click to submit form
+// $('.saveBtn').click(function() {
+//     $('.formInput').submit();
+// });
 
-// click to submit form
-$('.saveBtn').click(function() {
-    $('.formInput').submit();
-});
+// // Prevents default refresh on form submit
+// $('.formInput').submit(function(event) {
+//     event.preventDefault();
+
+//     var inputOney = $('#inputOne').val();
+//     localStorage.setItem("inpo1", inputOney);
+// })
+
+// $('#inputOne').val(localStorage.getItem('inpo1'));
+
 
 
 
