@@ -1,4 +1,6 @@
 const m = moment();
+// var tableHere = querySelectorAll("#tableHere");
+const tableHere = $('#tableHere');
 // An array of times
 const times = [
     '9 AM',
@@ -10,8 +12,8 @@ const times = [
     '3 PM',
     '4 PM',
     '5 PM'
-]
-
+];
+// An array of Id's for input boxes
 const inputId = [
     'inputOne',
     'inputTwo',
@@ -22,33 +24,29 @@ const inputId = [
     'inputSeven',
     'inputEight',
     'inputNine',
-]
+];
 
 // Set the text to current date via moment.js
 $('#currentDay').text(m.format('MMMM Do YYYY, LTS'));
 
-
-
-// var tableHere = querySelectorAll("#tableHere");
-const tableHere = $('#tableHere');
-
 // Create button function
 const addBtn = function() {
     $('.btnContainer').append($('<button class=saveBtn>save</button>'))
-    $('.inputContainer').append($('<input class="inputBox" type="text" placeholder="Enter"></input>'))
+    // Adds paceholder text into input column
+    $('.formInput').append($('<input class="inputBox" type="text" placeholder="Enter"></input>'))
 };
 
 // for loop which creates rows equal to the array size of times
 for (let i = 0; i < times.length; i++) {
-// Creating a row, with three columns, Date, Input and Save
+// Creating a row, with three columns, Date, Input and Save button
 const rowEl = $(
     `<tr>
         <td class=tDate> 
             ${times[i]} 
         </td>
-        <td class=tInput id=${inputId[i]}> 
-            <div class=inputContainer>
-            </div>
+        <td class=tInput> 
+            <form class=formInput id=${inputId[i]}>
+            </form>
         </td>
         <td class=tSave>
             <div class=btnContainer> 
@@ -58,13 +56,22 @@ const rowEl = $(
 );
 // Appends the row to the table
 tableHere.append(rowEl);
-// Adds paceholder text into input column
-// $('.tInput').text(`Enter`);
-// Calls create button function
 };
-
-
+// Calls create button function
 addBtn();
+
+// Prevents default refresh on form submit
+$('.formInput').submit(function(event) {
+    alert("hi");
+    event.preventDefault();
+})
+
+
+
+// click to submit form
+$('.saveBtn').click(function() {
+    $('.formInput').submit();
+});
 
 
 

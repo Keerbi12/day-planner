@@ -85,7 +85,7 @@ textarea {
   min-width: 100%;
 }
 
-.inputContainer {
+.formInput {
   display: flex;
   justify-content: center;
   align-items: center;
