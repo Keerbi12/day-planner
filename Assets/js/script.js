@@ -50,8 +50,8 @@ const rowEl = $(
             ${times[i]} 
         </td>
         <td class=tInput> 
-            <form class=formInput id=${inputId[i]}>
-                <input class="inputBox" type="text" placeholder="Enter"></input>
+            <form class=formInput>
+                <input id=${inputId[i]} class="inputBox" type="text" placeholder="Enter"></input>
             </form>
         </td>
         <td class=tSave>
@@ -65,10 +65,12 @@ const rowEl = $(
 tableHere.append(rowEl);
 };
 
+// Saves to local storage upon click
 $('#btnOne').click(function() {
-    console.log("btnOne")
+    const textInputOne = $('#inputOne').val();
+    localStorage.setItem('textValueOne', textInputOne);
 })
-
+$('#inputOne').val(localStorage.getItem('textValueOne'));
 
 // // click to submit form
 // $('.saveBtn').click(function() {
