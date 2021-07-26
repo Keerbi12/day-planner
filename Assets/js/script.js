@@ -84,12 +84,29 @@ for (let i = 0; i < times.length; i++) {
 
 // Finds current time to nearest hour, parseInt converts from string to number, used instead of number() in case of 9 AM etc.
 const currentTime = parseInt(m.format('k'));
+// const currentTime = 15
+
 console.log(currentTime);
-for (let i=currentTime; i=i; i=i) {
-    if (inputHour == i) {
-        $('.inputBox').addClass('inputBoxRed')
-    }
-    
+console.log(parseInt(inputHour[5]))
+
+if (currentTime === parseInt(inputHour[0])) {
+    $('.9').addClass('inputBoxRed')
+} else if (currentTime === parseInt(inputHour[1])) {
+    $('.10').addClass('inputBoxRed')
+} else if (currentTime === parseInt(inputHour[2])) {
+    $('.11').addClass('inputBoxRed')
+} else if (currentTime === parseInt(inputHour[3])) {
+    $('.12').addClass('inputBoxRed')
+} else if (currentTime === parseInt(inputHour[4])) {
+    $('.13').addClass('inputBoxRed')
+} else if (currentTime === parseInt(inputHour[5])) {
+    $('.14').addClass('inputBoxRed')
+} else if (currentTime === parseInt(inputHour[6])) {
+    $('.15').addClass('inputBoxRed')
+} else if (currentTime === parseInt(inputHour[7])) {
+    $('.16').addClass('inputBoxRed')
+} else if (currentTime === parseInt(inputHour[8])) {
+    $('.17').addClass('inputBoxRed')
 }
 
 // Saves to local storage upon click for btnOne etc.
