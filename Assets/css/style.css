@@ -101,11 +101,11 @@ textarea {
 }
 /* Input box styling red for current time */
 .inputBoxRed {
-  background-color: rgba(236, 100, 75, 0.7);
+  background-color: rgba(236, 100, 75, 0.7) !important;
 }
 /* Input box styling green for future time */
 .inputBoxGreen {
-  background-color: lightgreen;
+  background-color: lightgreen !important;
 }
 
 /* Table CSS */

@@ -84,11 +84,9 @@ for (let i = 0; i < times.length; i++) {
 
 // Finds current time to nearest hour, parseInt converts from string to number, used instead of number() in case of 9 AM etc.
 const currentTime = parseInt(m.format('k'));
-// const currentTime = 15
-
+// const currentTime = x, for testing purposes, comment above and change value of x to 9-17
 console.log(currentTime);
-console.log(parseInt(inputHour[5]))
-
+// Checks to see which time container is equal to the currentTime, will make the container turn red
 if (currentTime === parseInt(inputHour[0])) {
     $('.9').addClass('inputBoxRed')
 } else if (currentTime === parseInt(inputHour[1])) {
@@ -108,6 +106,32 @@ if (currentTime === parseInt(inputHour[0])) {
 } else if (currentTime === parseInt(inputHour[8])) {
     $('.17').addClass('inputBoxRed')
 }
+
+// Sets the time input container to green if it is above the current time.
+if (currentTime < parseInt(inputHour[1])) {
+    $('.10').addClass('inputBoxGreen')
+} 
+if (currentTime < parseInt(inputHour[2])) {
+    $('.11').addClass('inputBoxGreen')
+} 
+if (currentTime < parseInt(inputHour[3])) {
+    $('.12').addClass('inputBoxGreen')
+} 
+if (currentTime < parseInt(inputHour[4])) {
+    $('.13').addClass('inputBoxGreen')
+} 
+if (currentTime < parseInt(inputHour[5])) {
+    $('.14').addClass('inputBoxGreen')
+} 
+if (currentTime < parseInt(inputHour[6])) {
+    $('.15').addClass('inputBoxGreen')
+} 
+if (currentTime < parseInt(inputHour[7])) {
+    $('.16').addClass('inputBoxGreen')
+} 
+if (currentTime < parseInt(inputHour[8])) {
+    $('.17').addClass('inputBoxGreen')
+} 
 
 // Saves to local storage upon click for btnOne etc.
 $('#btnOne').click(function() {
@@ -155,20 +179,10 @@ $('#inputFive').val(localStorage.getItem('textValueFive'));
 $('#inputSix').val(localStorage.getItem('textValueSix'));
 $('#inputSeven').val(localStorage.getItem('textValueSeven'));
 $('#inputEight').val(localStorage.getItem('textValueEight'));
+$('#inputNine').val(localStorage.getItem('textValueNine'));
 
 // An alert that tells you the text has been saved
 $('.saveBtn').click(function() {
-    console.log(this.id);
-    alert(`Text saved on ${this.id}`);
+    // alert(`Text saved on ${this.id}`);
+    console.log(`Text saved on ${this.id}`)
 });
-
-
-
-
-
-
-
-
-
-
-
