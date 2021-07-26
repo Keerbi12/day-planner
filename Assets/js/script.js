@@ -1,6 +1,5 @@
+// Easier to work with moment.js by saving moment() as m
 const m = moment();
-// var tableHere = querySelectorAll("#tableHere");
-const tableHere = $('#tableHere');
 // An array of times
 const times = [
     '9 AM',
@@ -44,6 +43,7 @@ $('#currentDay').text(m.format('MMMM Do YYYY, LTS'));
 // for loop which creates rows equal to the array size of times
 for (let i = 0; i < times.length; i++) {
 // Creating a row, with three columns, Date, Input and Save button
+// using JQuery, we can directly set the id to the array we created above for buttons and input boxes
 const rowEl = $(
     `<tr>
         <td class=tDate> 
@@ -62,7 +62,7 @@ const rowEl = $(
     </tr>`
 );
 // Appends the row to the table
-tableHere.append(rowEl);
+$('#tableHere').append(rowEl);
 };
 
 // An alert that tells you the text has been saved
@@ -76,48 +76,48 @@ $('.saveBtn').click(function() {
 $('#btnOne').click(function() {
     localStorage.setItem('textValueOne', $('#inputOne').val());
 })
-$('#inputOne').val(localStorage.getItem('textValueOne'));
 // btnTwo
 $('#btnTwo').click(function() {
     localStorage.setItem('textValueTwo', $('#inputTwo').val());
 })
-$('#inputTwo').val(localStorage.getItem('textValueTwo'));
 // btnThree
 $('#btnThree').click(function() {
     localStorage.setItem('textValueThree', $('#inputThree').val());
 })
-$('#inputThree').val(localStorage.getItem('textValueThree'));
 // btnFour
 $('#btnFour').click(function() {
     localStorage.setItem('textValueFour', $('#inputFour').val());
 })
-$('#inputFour').val(localStorage.getItem('textValueFour'));
 // btnFive
 $('#btnFive').click(function() {
     localStorage.setItem('textValueFive', $('#inputFive').val());
 })
-$('#inputFive').val(localStorage.getItem('textValueFive'));
 // btnSix
 $('#btnFive').click(function() {
     localStorage.setItem('textValueSix', $('#inputSix').val());
 })
-$('#inputSix').val(localStorage.getItem('textValueSix'));
 // btnSeven
 $('#btnSeven').click(function() {
     localStorage.setItem('textValueSeven', $('#inputSeven').val());
 })
-$('#inputSeven').val(localStorage.getItem('textValueSeven'));
 // btnEight
 $('#btnEight').click(function() {
     localStorage.setItem('textValueEight', $('#inputEight').val());
 })
-$('#inputEight').val(localStorage.getItem('textValueEight'));
 // btnNine
 $('#btnNine').click(function() {
     localStorage.setItem('textValueNine', $('#inputNine').val());
 })
-$('#inputNine').val(localStorage.getItem('textValueNine'));
 
+// Sets the value of textbox, to what was saved to local storage, repeats for all 9 input boxes
+$('#inputOne').val(localStorage.getItem('textValueOne'));
+$('#inputTwo').val(localStorage.getItem('textValueTwo'));
+$('#inputThree').val(localStorage.getItem('textValueThree'));
+$('#inputFour').val(localStorage.getItem('textValueFour'));
+$('#inputFive').val(localStorage.getItem('textValueFive'));
+$('#inputSix').val(localStorage.getItem('textValueSix'));
+$('#inputSeven').val(localStorage.getItem('textValueSeven'));
+$('#inputEight').val(localStorage.getItem('textValueEight'));
 
 
 // // click to submit form
