@@ -99,6 +99,14 @@ textarea {
   background-color: rgba(0,0,0,0);
   border: none;
 }
+/* Input box styling red for current time */
+.inputBoxRed {
+  background-color: rgba(236, 100, 75, 0.7);
+}
+/* Input box styling green for future time */
+.inputBoxGreen {
+  background-color: lightgreen;
+}
 
 /* Table CSS */
 
@@ -113,7 +121,7 @@ tr {
 td {
   height: 80px;
 }
-
+/* Styling for the table sections */
 .tDate {
   background-color: none;
   width: 10%;
@@ -131,12 +139,4 @@ td {
   background-color: turquoise;
   width: 10%;
   padding: 0px !important;
-}
-
-#inputNine {
-  background-color: red;
-}
-
-#btnEight {
-  background-color: red;
 }
